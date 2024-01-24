@@ -1,10 +1,13 @@
 package task.oop;
 
+
 public class OOP {
     public static void main(String[] args) {
         int nambers = 1;
         String str = "50";
 
+        // fixme: error
+        System.out.println(Parent.strok(""));
     }
 
 // Реализуйте функциональность согласно описанию
@@ -16,25 +19,31 @@ public class OOP {
     //  4. Метод, не принимающий и не возвращающий ничего, лишь выводящий на экран "I am Parent".
     //  5. Метод, возвращающий конкатенацию (сумму двух строк), принимающий 2 строки.
 
-    public class Parent {
+    // fixme: а почему всё статик?
+    public static class Parent {
         public static int sum(int a, int b) {
             return a + b;
         }
 
+        // fixme: в одну строку давай - можешь тоже назвать sum (это называется перегрузкой)
+        //        подробнее тут - https://habr.com/ru/companies/otus/articles/428307/
         public static int summa(String str, int nambers) {
             int tonambers = Integer.parseInt(str);
             return nambers + tonambers;
 
         }
 
+        // fixme: у тебя тут бесконечная рекурсия. Как поправить?
         public static String strok(String str) {
             return strok(str);
         }
 
+        // fixme: нейминг
         public static void Massage() {
             System.out.println("I am Parent");
         }
 
+        // fixme: давай либо concat, либо sum (перегрузкой)
         public static String summaStrok(String str1, String str2) {
             return str1 + str2;
         }
@@ -48,7 +57,9 @@ public class OOP {
     //  4. Четвертый метод выводит на экран "I am Child1".
     //  5. Пятый метод после слияния двух строк должен обрезать строку и вернуть только ее половину.
 
-    public class Child1 extends Parent {
+    // fixme: по сути ты не переопределил методы, ты их "перекрыл".
+    //        переопределение возможно только на методах объекта.
+    public static class Child1 extends Parent {
 
         public static int sum(int a, int b) {
             return a * b;
@@ -81,6 +92,9 @@ public class OOP {
     //  3. Третий метод примет две строки и вернет их конкатенацию.
     //  4. Четвертый метод примет аргумент строку и выведет на экран "I am Child2" + переданная строка.
     //  5. Пятый метод принимает 3 строки и возвращает их конкатенацию.
+
+    // fixme: по сути ты не переопределил методы, ты их "перекрыл".
+    //        переопределение возможно только на методах объекта.
     public class Child2 extends Parent {
         public static int sum(int a, int b, int с) {
             return a + b + с;
@@ -112,10 +126,15 @@ public class OOP {
         // TODO: Создайте абстрактный класс "Фигура", в котором определены общие свойства и методы для всех геометрических фигур
         //  (например, метод для расчета площади).
         //  От него унаследуйте классы "Круг", "Прямоугольник" и "Треугольник", переопределив специфичные методы для каждой фигуры.
+
+
         public abstract class Figura {
             public abstract double calculateFigur();
         }
 
+
+        // fixme: is it circle, bro? Why do u make it static?
+        //        How should we use it?
         public abstract class Krug extends Figura {
             double radius;
 
@@ -178,6 +197,8 @@ public class OOP {
             return age;
         }
     }
+
+    // fixme: а почему родитель статик, а это не статик?
     class Manager extends Employee {
         int Profit;
 
@@ -196,6 +217,7 @@ public class OOP {
             System.out.println(name + age + Profit);
         }
     }
+
     class WarehouseWorker extends Employee{
         int Experience;
 
@@ -207,13 +229,11 @@ public class OOP {
         public int getExperience() {
             return Experience;
         }
+        
         public void Considers(){
             System.out.println(name + age + Experience);
         }
     }
 
-
-
-
-        }
+}
 
