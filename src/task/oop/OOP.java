@@ -136,6 +136,7 @@ public class OOP {
                 this.length = length;
                 this.width = width;
             }
+
             public double calculateFigur() {
                 return length * width;
             }
@@ -149,15 +150,70 @@ public class OOP {
                 this.base = base;
                 this.height = height;
             }
+
             public double calculateFigur() {
                 return 0.5 * base * height;
             }
         }
 
+    }
+
+    // TODO: Создайте абстрактный класс "Сотрудник", в котором определены общие характеристики для всех сотрудников (например, имя, возраст).
+    //  Создайте подклассы для различных типов сотрудников (например, "Менеджер", "Работник склада"),
+    //  в которых можно описать специфичные методы и свойства.
+    public static abstract class Employee {
+        String name;
+        int age;
+
+        public Employee(String name, int age) {
+            this.name = name;
+            this.age = age;
         }
 
-        // TODO: Создайте абстрактный класс "Сотрудник", в котором определены общие характеристики для всех сотрудников (например, имя, возраст).
-        //  Создайте подклассы для различных типов сотрудников (например, "Менеджер", "Работник склада"),
-        //  в которых можно описать специфичные методы и свойства.
+        public String getName() {
+            return name;
+        }
 
+        public int getAge() {
+            return age;
+        }
     }
+    class Manager extends Employee {
+        int Profit;
+
+
+        public Manager(String name, int age, int Profit) {
+            super(name, age);
+            this.Profit = Profit;
+        }
+
+        public int getProfit() {
+            return Profit;
+        }
+
+        public void receiving() {
+
+            System.out.println(name + age + Profit);
+        }
+    }
+    class WarehouseWorker extends Employee{
+        int Experience;
+
+        public WarehouseWorker(String name, int age) {
+            super(name, age);
+            this.Experience = Experience;
+        }
+
+        public int getExperience() {
+            return Experience;
+        }
+        public void Considers(){
+            System.out.println(name + age + Experience);
+        }
+    }
+
+
+
+
+        }
+
