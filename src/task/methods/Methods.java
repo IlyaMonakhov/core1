@@ -9,10 +9,17 @@ public class Methods {
         String name1 = "Илья";
         String name2 = "илья";
         int[] arr = {1, 6, 10};
-        String vv = "Привет Абракадабра";
+        String stroka = "ааааА";
         int NascalnieSredstva = 1000;
         int Trati = 1001;
-        System.out.println(Money(NascalnieSredstva, Trati));
+        boolean B1 = true;
+        boolean B2 = true;
+        int number = 5;
+        System.out.println();
+
+
+
+
         //test
 
     }
@@ -31,63 +38,55 @@ public class Methods {
 
 
     // TODO: Создайте метод который вернет сумму двух переданных строк
-    public static String sumStrok(String a, String b) {
+    public static String sumString(String a, String b) {
         return a + b;
     }
 
 
     // TODO: создайте метод который примет строку внутри которой передается число , а также принимает число . Метод должен суммировать числа
     //  обернуть их в строку и вернуть результат строкой
-    public static String sumString(String str, int num) {
+    public static String sumStringAndInt(String str, int num) {
         int sum = Integer.parseInt(str) + num;
-        String sumStr = String.valueOf(sum);
-        return sumStr;
+        return String.valueOf(sum);
+
     }
 
     // TODO: Создайте метод который принимает строку , число . Внутри строки передается число . Проверить , что если число внутри строки больше чем
     //  число которое передается как int , то пусть метод вернет false , а если меньше , то true
-    public static boolean StringNumber(String str, int num) {
-        int nambers = Integer.parseInt(str);
-        boolean bool = nambers < num;
-        return bool;
+    public static boolean stringNumber(String str, int num) {
+        boolean more = Integer.parseInt(str) > num;
+        return more;
     }
 
     // TODO: Создайте метод который принимает 2 булевые переменные . Если обе true , верни true , если хоть одна из них true верни true ,
-//  если обе false верни false
+   //    если обе false верни false
     public static boolean toBoolean(boolean B1, boolean B2) {
-        if (B1 || B2 != false) {
-            return true;
-        } else {
-            return false;
-        }
+        return B1 || B2;
     }
 
     // TODO: Создайте метод который принимает число и вернет true если оно четное , и false если оно не четное
-    public static boolean integerNambers(int booleans) {
-        if (booleans % 2 == 0) {
-            return true;
-        } else {
-            return false;
-        }
+    public static boolean integerNumbers(int number) {
+            return number % 2 == 0;
+
     }
 
     // TODO: Создайте метод который проверят числа в массиве , если все они четные верни "Массив четных чисел" , если есть и четные и не
     //  четные верни "Массив четных и не четных чисел" и если в массиве только нечетные числа верни "Массив не четных чисел"
-    public static String massivNambers(int[] arr) {
-        boolean neshet = true;
-        boolean shet = true;
+    public static String arrayOddAndEven(int[] arr) {
+        boolean odd = true;
+        boolean even = true;
 
         for (int num : arr) {
             if (num % 2 != 0) {
-                neshet = false;
+                odd = false;
             } else {
-                shet = false;
+                even = false;
             }
         }
 
-        if (neshet) {
+        if (odd) {
             return "Массив четных чисел";
-        } else if (shet) {
+        } else if (even) {
             return "Массив нечетных чисел";
         } else {
             return "Массив четных и нечетных чисел";
@@ -96,62 +95,54 @@ public class Methods {
 
     // TODO: Создайте метод который принимает массив чисел и возвращает новый массив чисел . Внутри метода пройдитесь по элементам
     //  массива который подается в аргументы  и сложите все элементы в новый массив и верните его
-    public static int[] sumArray(int[] arr) {
-        int sum = 0;
+    public static int[] newArray(int[] arr) {
+        int[] newArray = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
+            newArray[i] = arr[i];
         }
-        int[] result = new int[1];
-        result[0] = sum;
-        return result;
+        return newArray;
     }
 
     // TODO: Создайте метод который принимает массив чисел и возвращает число . Внутри метода пройдитесь по элементам массива который подается в
-//  аргументы сложите все числа который переданы в массиве и верните сумму всех чисел
-    public static int ArraysSumma(int[] arr) {
+    //  аргументы сложите все числа который переданы в массиве и верните сумму всех чисел
+    public static int arraySum(int[] arr) {
         int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
+        for (int num : arr) {
+            sum += num;
         }
         return sum;
     }
 
     // TODO: Создайте методы в которые можно будет передавать свой возраст , а возвращаться сколько полных месяцев в этом возрасте ,
-//  тоесть если человек прожил 10 лет , это 120 месяцевтак же сделайте перевод возраста в минуты и метод который расчетает возраст в часах
-    public static int AgeMonths(int age) {
-        int mounts = age * 12;
-        return mounts;
+    //  тоесть если человек прожил 10 лет , это 120 месяцевтак же сделайте перевод возраста в минуты и метод который расчетает возраст в часах
+    public static int ageMonth(int age) {
+        return age * 12;
     }
 
-    public static int AgeHour(int age) {
-        int hour = age * 365 * 24;
-        return hour;
+    public static int ageHour(int age) {
+        return age * 365 * 24;
     }
 
     public static int AgeMinutes(int age) {
-        int minutes = age * 365 * 24 * 60;
-        return minutes;
+        return age * 365 * 24 * 60;
     }
 
 
     // TODO: Создайте метод которому передаю имена , а он проверяет одинаковые ли они , причем не зависимо от регистра
-    public static boolean names(String name1, String name2) {
-
+    public static boolean EqualityOfNames(String name1, String name2) {
         return name1.equalsIgnoreCase(name2);
-
     }
 
 
     // TODO: Создайте метод которому можно передать массив элементов , а он вернет последний элемент
-    public static int MassivElevtnrs(int[] elements) {
-        int a = elements[elements.length - 1];
-        return a;
+    public static int getLastElementOfArray(int[] elements) {
+        return elements[elements.length - 1];
 
     }
 
 
     // TODO: Создайте метод счетчик букв А . Подается строка и метод посчитает сколько букв А в строке
-    public static int scetcikA(String stroka) {
+    public static int numberOfLettersA(String stroka) {
         int count = 0;
         for (int i = 0; i < stroka.length(); i++) {
             if (stroka.charAt(i) == 'А' || stroka.charAt(i) == 'а') {
@@ -159,18 +150,18 @@ public class Methods {
             }
         }
         return count;
-
     }
 
 
+
     // TODO: Создайте метод кошелек , у него есть началная сумма и можно вычитать пока деньги не кончатся или сумма не будет слишком велика
-    public static String Money(int NascalnieSredstva, int Trati) {
-        if (Trati > NascalnieSredstva) {
+    public static String Wallet(int initialАmount, int Wastes) {
+        if (Wastes > initialАmount) {
             return "недостаточно средств";
-        } else if (NascalnieSredstva <= 0) {
+        } else if (initialАmount <= 0) {
             return "сумма на кошельке = 0 или меньше";
         } else {
-            int ostatok = NascalnieSredstva - Trati;
+            int ostatok = initialАmount - Wastes;
             return "остаток" + ostatok;
 
         }
