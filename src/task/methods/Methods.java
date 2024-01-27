@@ -6,12 +6,10 @@ public class Methods {
         String string = getString("HELLO");
         // Ожидаемый результат hello System.out.println(string);
         // Вызовы ваших методов
-        String name1 = "Илья";
-        String name2 = "илья";
+        String nume1 = "Илья";
+        String nume2 = "илья";
         int[] arr = {1, 6, 10};
-        String stroka = "ааааА";
-        int NascalnieSredstva = 1000;
-        int Trati = 1001;
+        String str = "ааааА";
         boolean B1 = true;
         boolean B2 = true;
         int number = 5;
@@ -60,7 +58,7 @@ public class Methods {
 
     // TODO: Создайте метод который принимает 2 булевые переменные . Если обе true , верни true , если хоть одна из них true верни true ,
    //    если обе false верни false
-    public static boolean toBoolean(boolean B1, boolean B2) {
+    public static boolean twoBoolean(boolean B1, boolean B2) {
         return B1 || B2;
     }
 
@@ -129,7 +127,7 @@ public class Methods {
 
 
     // TODO: Создайте метод которому передаю имена , а он проверяет одинаковые ли они , причем не зависимо от регистра
-    public static boolean EqualityOfNames(String name1, String name2) {
+    public static boolean equalityOfNames(String name1, String name2) {
         return name1.equalsIgnoreCase(name2);
     }
 
@@ -155,13 +153,13 @@ public class Methods {
 
 
     // TODO: Создайте метод кошелек , у него есть началная сумма и можно вычитать пока деньги не кончатся или сумма не будет слишком велика
-    public static String Wallet(int initialАmount, int Wastes) {
-        if (Wastes > initialАmount) {
+    public static String wallet(int initialАmount, int wastes) {
+        if (wastes > initialАmount) {
             return "недостаточно средств";
         } else if (initialАmount <= 0) {
             return "сумма на кошельке = 0 или меньше";
         } else {
-            int ostatok = initialАmount - Wastes;
+            int ostatok = initialАmount - wastes;
             return "остаток" + ostatok;
 
         }

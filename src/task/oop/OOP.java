@@ -2,8 +2,8 @@ package task.oop;
 
 public class OOP {
     public static void main(String[] args) {
-        int a = 6;
-        int b = 1;
+        int number1 = 6;
+        int number2 = 1;
 
         String str = "50";
 
@@ -27,7 +27,7 @@ public class OOP {
 
             }
 
-            public static String strok(String str) {
+            public static String string(String str) {
                 return str;
             }
 
@@ -54,16 +54,16 @@ public class OOP {
                 return length * Height;
             }
 
-            public static int Doublenumber(String str, int nambers1) {
-                int thonambers = Integer.parseInt(str);
-                return (nambers1 + thonambers) * 2;
+            public static int doublenumber(String str, int numbers1) {
+                int twonambers = Integer.parseInt(str);
+                return (numbers1 + twonambers) * 2;
             }
 
             public static String firstLetter(String str) {
                 return String.valueOf(str.charAt(0));
             }
 
-            public static void Massage() {
+            public static void massage() {
                 System.out.println("I am Child1");
             }
 
@@ -95,7 +95,7 @@ public class OOP {
                 return stroka1 + stroka2;
             }
 
-            public void MassageStr(String string) {
+            public void massageStr(String string) {
                 System.out.println("I am Child2 " + string);
             }
 
@@ -111,7 +111,7 @@ public class OOP {
         //  (например, метод для расчета площади).
         //  От него унаследуйте классы "Круг", "Прямоугольник" и "Треугольник", переопределив специфичные методы для каждой фигуры.
         abstract class Figura {
-            public abstract double calculateFigur();
+            public abstract double CalculateFigur();
         }
 
         abstract class Circle extends Figura {
@@ -121,7 +121,7 @@ public class OOP {
                 this.radius = radius;
             }
 
-            public double calculateKrug() {
+            public double CalculateKrug() {
                 return Math.PI * radius * radius;
             }
         }
@@ -135,7 +135,7 @@ public class OOP {
                 this.width = width;
             }
 
-            public double calculateFigur() {
+            public double CalculateFigur() {
                 return length * width;
             }
         }
@@ -149,7 +149,7 @@ public class OOP {
                 this.height = height;
             }
 
-            public double calculateFigur() {
+            public double CalculateFigur() {
                 return 0.5 * base * height;
             }
         }
@@ -178,38 +178,38 @@ public class OOP {
     }
 
     class Manager extends Employee {
-        int Profit;
+        int profit;
 
 
         public Manager(String name, int age, int Profit) {
             super(name, age);
-            this.Profit = Profit;
+            this.profit = Profit;
         }
 
         public int getProfit() {
-            return Profit;
+            return profit;
         }
 
         public void receiving() {
 
-            System.out.println(name + age + Profit);
+            System.out.println(name + age + profit);
         }
     }
 
     class WarehouseWorker extends Employee {
-        int Experience;
+        int experience;
 
         public WarehouseWorker(String name, int age) {
             super(name, age);
-            this.Experience = Experience;
+            this.experience = experience;
         }
 
         public int getExperience() {
-            return Experience;
+            return experience;
         }
 
-        public void Considers() {
-            System.out.println(name + age + Experience);
+        public void considers() {
+            System.out.println(name + age + experience);
         }
     }
 }
