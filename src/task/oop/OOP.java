@@ -1,12 +1,16 @@
 package task.oop;
 
+
 public class OOP {
     public static void main(String[] args) {
-        int number1 = 6;
-        int number2 = 1;
+        int a = 6;
+        int b = 1;
 
         String str = "50";
 
+        // fixme: почему я не могу создать? понятно ли тебе это?
+        //        классы так не пишут, это какой-то оч экстраординарный подход)
+        Parent();
 
 // Реализуйте функциональность согласно описанию
 
@@ -27,7 +31,8 @@ public class OOP {
 
             }
 
-            public static String string(String str) {
+            // fixme: strok??
+            public static String strok(String str) {
                 return str;
             }
 
@@ -35,6 +40,7 @@ public class OOP {
                 System.out.println("I am Parent");
             }
 
+            // TODO: название - класс, но аргументы пиши через слова first и second
             public static String concat(String str1, String str2) {
                 return str1 + str2;
             }
@@ -54,16 +60,18 @@ public class OOP {
                 return length * Height;
             }
 
-            public static int doublenumber(String str, int numbers1) {
-                int twonambers = Integer.parseInt(str);
-                return (numbers1 + twonambers) * 2;
+            // fixme: что же тут не так? аж две штуки
+            //        запомни, что если добавляешь s, то это множество вещей. а это в java применимо для коллекций и массивов
+            public static int Doublenumber(String str, int nambers1) {
+                int thonambers = Integer.parseInt(str);
+                return (nambers1 + thonambers) * 2;
             }
 
             public static String firstLetter(String str) {
                 return String.valueOf(str.charAt(0));
             }
 
-            public static void massage() {
+            public static void Massage() {
                 System.out.println("I am Child1");
             }
 
@@ -95,7 +103,8 @@ public class OOP {
                 return stroka1 + stroka2;
             }
 
-            public void massageStr(String string) {
+            // fixme: что же тут не так?
+            public void MassageStr(String string) {
                 System.out.println("I am Child2 " + string);
             }
 
@@ -110,10 +119,14 @@ public class OOP {
         // TODO: Создайте абстрактный класс "Фигура", в котором определены общие свойства и методы для всех геометрических фигур
         //  (например, метод для расчета площади).
         //  От него унаследуйте классы "Круг", "Прямоугольник" и "Треугольник", переопределив специфичные методы для каждой фигуры.
+
+        // fixme: а как же английский?) поправь грамматическую ошибку)
         abstract class Figura {
-            public abstract double CalculateFigur();
+            // fixme: а как же английский?) поправь грамматическую ошибку)
+            public abstract double calculateFigur();
         }
 
+        // fixme: а почему они абстрактные?
         abstract class Circle extends Figura {
             double radius;
 
@@ -121,11 +134,12 @@ public class OOP {
                 this.radius = radius;
             }
 
-            public double CalculateKrug() {
+            public double calculateKrug() {
                 return Math.PI * radius * radius;
             }
         }
 
+        // fixme: а почему они абстрактные?
         abstract class Rectangle extends Figura {
             double length;
             double width;
@@ -135,11 +149,12 @@ public class OOP {
                 this.width = width;
             }
 
-            public double CalculateFigur() {
+            public double calculateFigur() {
                 return length * width;
             }
         }
 
+        // fixme: а почему они абстрактные?
         abstract class Triangle extends Figura {
             private double base;
             private double height;
@@ -149,7 +164,7 @@ public class OOP {
                 this.height = height;
             }
 
-            public double CalculateFigur() {
+            public double calculateFigur() {
                 return 0.5 * base * height;
             }
         }
@@ -177,39 +192,42 @@ public class OOP {
         }
     }
 
+    // тут правильно, а там нет
     class Manager extends Employee {
-        int profit;
+        // fixme: что же тут не так?
+        int Profit;
 
 
         public Manager(String name, int age, int Profit) {
             super(name, age);
-            this.profit = Profit;
+            this.Profit = Profit;
         }
 
         public int getProfit() {
-            return profit;
+            return Profit;
         }
 
         public void receiving() {
 
-            System.out.println(name + age + profit);
+            System.out.println(name + age + Profit);
         }
     }
 
     class WarehouseWorker extends Employee {
-        int experience;
+        // fixme: что же тут не так?
+        int Experience;
 
         public WarehouseWorker(String name, int age) {
             super(name, age);
-            this.experience = experience;
+            this.Experience = Experience;
         }
 
         public int getExperience() {
-            return experience;
+            return Experience;
         }
 
-        public void considers() {
-            System.out.println(name + age + experience);
+        public void Considers() {
+            System.out.println(name + age + Experience);
         }
     }
 }
