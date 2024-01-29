@@ -3,14 +3,14 @@ package task.oop;
 
 public class OOP {
     public static void main(String[] args) {
-        int a = 6;
-        int b = 1;
+        int num1 = 6;
+        int num2 = 1;
 
         String str = "50";
 
         // fixme: почему я не могу создать? понятно ли тебе это?
         //        классы так не пишут, это какой-то оч экстраординарный подход)
-        Parent();
+        //Parent();
 
 // Реализуйте функциональность согласно описанию
 
@@ -32,7 +32,7 @@ public class OOP {
             }
 
             // fixme: strok??
-            public static String strok(String str) {
+            public static String string(String str) {
                 return str;
             }
 
@@ -41,8 +41,8 @@ public class OOP {
             }
 
             // TODO: название - класс, но аргументы пиши через слова first и second
-            public static String concat(String str1, String str2) {
-                return str1 + str2;
+            public static String concat(String first, String second) {
+                return first + second;
             }
         }
 
@@ -62,16 +62,16 @@ public class OOP {
 
             // fixme: что же тут не так? аж две штуки
             //        запомни, что если добавляешь s, то это множество вещей. а это в java применимо для коллекций и массивов
-            public static int Doublenumber(String str, int nambers1) {
-                int thonambers = Integer.parseInt(str);
-                return (nambers1 + thonambers) * 2;
+            public static int doubleNumber(String str, int first) {
+                int second = Integer.parseInt(str);
+                return (first + second) * 2;
             }
 
             public static String firstLetter(String str) {
                 return String.valueOf(str.charAt(0));
             }
 
-            public static void Massage() {
+            public static void massage() {
                 System.out.println("I am Child1");
             }
 
@@ -99,12 +99,12 @@ public class OOP {
 
             }
 
-            public static String sumString(String stroka1, String stroka2) {
-                return stroka1 + stroka2;
+            public static String sumString(String line, String line2) {
+                return line + line2;
             }
 
             // fixme: что же тут не так?
-            public void MassageStr(String string) {
+            public void massageStr(String string) {
                 System.out.println("I am Child2 " + string);
             }
 
@@ -121,113 +121,120 @@ public class OOP {
         //  От него унаследуйте классы "Круг", "Прямоугольник" и "Треугольник", переопределив специфичные методы для каждой фигуры.
 
         // fixme: а как же английский?) поправь грамматическую ошибку)
-        abstract class Figura {
+        abstract class Figure {
             // fixme: а как же английский?) поправь грамматическую ошибку)
-            public abstract double calculateFigur();
-        }
+            public abstract double calculateFigure();
 
-        // fixme: а почему они абстрактные?
-        abstract class Circle extends Figura {
-            double radius;
 
-            public Circle(double radius) {
-                this.radius = radius;
+            // fixme: а почему они абстрактные?
+            public static class Circle extends Figure {
+                final double radius;
+
+                public Circle(double radius) {
+                    this.radius = radius;
+                }
+
+                public double calculateCircle() {
+                    return Math.PI * radius * radius;
+                }
+
+                @Override
+                public double calculateFigure() {
+                    return 0;
+                }
             }
 
-            public double calculateKrug() {
-                return Math.PI * radius * radius;
-            }
-        }
+            // fixme: а почему они абстрактные?
+            public static class rectangle extends Figure {
+                final double length;
+                final double width;
 
-        // fixme: а почему они абстрактные?
-        abstract class Rectangle extends Figura {
-            double length;
-            double width;
+                public rectangle(double length, double width) {
+                    this.length = length;
+                    this.width = width;
+                }
 
-            public Rectangle(double length, double width) {
-                this.length = length;
-                this.width = width;
-            }
-
-            public double calculateFigur() {
-                return length * width;
-            }
-        }
-
-        // fixme: а почему они абстрактные?
-        abstract class Triangle extends Figura {
-            private double base;
-            private double height;
-
-            public Triangle(double base, double height) {
-                this.base = base;
-                this.height = height;
+                public double calculateFigure() {
+                    return length * width;
+                }
             }
 
-            public double calculateFigur() {
-                return 0.5 * base * height;
+            // fixme: а почему они абстрактные?
+            public static class triangle extends Figure {
+                private final double base;
+                private final double height;
+
+                public triangle(double base, double height) {
+                    this.base = base;
+                    this.height = height;
+                }
+
+                public double calculateFigure() {
+                    return 0.5 * base * height;
+                }
             }
+
         }
 
-    }
+        // TODO: Создайте абстрактный класс "Сотрудник", в котором определены общие характеристики для всех сотрудников (например, имя, возраст).
+        //  Создайте подклассы для различных типов сотрудников (например, "Менеджер", "Работник склада"),
+        //  в которых можно описать специфичные методы и свойства.
+        abstract class Employee {
+            final String name;
+            final int age;
 
-    // TODO: Создайте абстрактный класс "Сотрудник", в котором определены общие характеристики для всех сотрудников (например, имя, возраст).
-    //  Создайте подклассы для различных типов сотрудников (например, "Менеджер", "Работник склада"),
-    //  в которых можно описать специфичные методы и свойства.
-    abstract class Employee {
-        String name;
-        int age;
+            public Employee(String name, int age) {
+                this.name = name;
+                this.age = age;
+            }
 
-        public Employee(String name, int age) {
-            this.name = name;
-            this.age = age;
-        }
+            public String getName() {
+                return name;
+            }
 
-        public String getName() {
-            return name;
-        }
-
-        public int getAge() {
-            return age;
-        }
-    }
-
-    // тут правильно, а там нет
-    class Manager extends Employee {
-        // fixme: что же тут не так?
-        int Profit;
+            public int getAge() {
+                return age;
+            }
 
 
-        public Manager(String name, int age, int Profit) {
-            super(name, age);
-            this.Profit = Profit;
-        }
+            // тут правильно, а там нет
+            public static class Manager extends Employee {
+                // fixme: что же тут не так?
+                final int profit;
 
-        public int getProfit() {
-            return Profit;
-        }
 
-        public void receiving() {
+                public Manager(String name, int age, int Profit) {
+                    super(name, age);
+                    this.profit = Profit;
+                }
 
-            System.out.println(name + age + Profit);
-        }
-    }
+                public int getProfit() {
+                    return profit;
+                }
 
-    class WarehouseWorker extends Employee {
-        // fixme: что же тут не так?
-        int Experience;
+                public void receiving() {
 
-        public WarehouseWorker(String name, int age) {
-            super(name, age);
-            this.Experience = Experience;
-        }
+                    System.out.println(name + age + profit);
+                }
+            }
 
-        public int getExperience() {
-            return Experience;
-        }
+            public static class WarehouseWorker extends Employee {
+                // fixme: что же тут не так?
+                int experience;
 
-        public void Considers() {
-            System.out.println(name + age + Experience);
+                public WarehouseWorker(String name, int age) {
+                    super(name, age);
+                    this.experience = experience;
+                }
+
+                public int getExperience() {
+                    return experience;
+                }
+
+                public void considers() {
+                    System.out.println(name + age + experience);
+                }
+            }
         }
     }
 }
