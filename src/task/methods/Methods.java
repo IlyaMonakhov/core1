@@ -23,15 +23,15 @@ public class Methods {
         System.out.println();
         System.out.println("Создайте метод который принимает строку, число. Внутри строки передается число . Проверить , что если число внутри строки больше чем\n число которое передается как int , то пусть метод вернет false , а если меньше , то true");
         System.out.println("args: 23 (str), 43 (int)");
-        System.out.println(stringNumber("23", 43));
+        System.out.println(compare("23", 43));
         System.out.println();
         System.out.println("Создайте метод который принимает 2 булевые переменные . Если обе true , верни true , если хоть одна из них true верни true ,\n если обе false верни false");
         System.out.println("args: true (bool), false (bool)");
-        System.out.println(toBoolean(true, false));
+        System.out.println(logicSum(true, false));
         System.out.println();
         System.out.println("Создайте метод который принимает число и вернет true если оно четное , и false если оно не четное");
         System.out.println("args: 2 (int)");
-        System.out.println(integerNumbers(2));
+        System.out.println(isItEven(2));
         System.out.println();
         System.out.println("Создайте метод который проверят числа в массиве , если все они четные верни \"Массив четных чисел\" , если есть и четные и не\n четные верни \"Массив четных и не четных чисел\" и если в массиве только нечетные числа верни \"Массив не четных чисел\"");
         System.out.println("args: " + Arrays.toString(new int[]{2, 4, 6}));
@@ -63,7 +63,7 @@ public class Methods {
         System.out.println();
         System.out.println("Создайте метод которому передаю имена , а он проверяет одинаковые ли они , причем не зависимо от регистра");
         System.out.println("args: TesT, test");
-        System.out.println(EqualityOfNames("TesT", "test"));
+        System.out.println(equalityOfNames("TesT", "test"));
         System.out.println();
         System.out.println("Создайте метод которому можно передать массив элементов, а он вернет последний элемент");
         System.out.println("args: " + Arrays.toString(new int[]{1, 2, 3, 4}));
@@ -77,11 +77,11 @@ public class Methods {
         System.out.println();
         System.out.println("Создайте метод кошелек , у него есть начальная сумма и можно вычитать пока деньги не кончатся или сумма не будет слишком велика");
         System.out.println("args: 25, 13");
-        System.out.println(Wallet(25, 13));
+        System.out.println(wallet(25, 13));
         System.out.println("args: 5, 13");
-        System.out.println(Wallet(5, 13));
+        System.out.println(wallet(5, 13));
         System.out.println("args: 13, 13");
-        System.out.println(Wallet(13, 13));
+        System.out.println(wallet(13, 13));
     }
 
     // Метод принимающий строку и преобразующий ее в нижний регистр
@@ -115,7 +115,7 @@ public class Methods {
     //  число которое передается как int , то пусть метод вернет false, а если меньше , то true
 
     // fixme: что такое stringNumber, может это что-то типа compare?
-    public static boolean stringNumber(String str, int num) {
+    public static boolean compare(String str, int num) {
         boolean more = Integer.parseInt(str) > num;
         return more;
     }
@@ -124,13 +124,13 @@ public class Methods {
    //    если обе false верни false
 
     // fixme: как и в комменте ниже, можно назвать logicSum, например
-    public static boolean toBoolean(boolean B1, boolean B2) {
+    public static boolean logicSum(boolean B1, boolean B2) {
         return B1 || B2;
     }
 
     // TODO: Создайте метод который принимает число и вернет true если оно четное , и false если оно не четное
     // fixme: что значит integerNumbers? Может isItEven(...)?
-    public static boolean integerNumbers(int number) {
+    public static boolean isItEven(int number) {
             return number % 2 == 0;
 
     }
@@ -206,8 +206,8 @@ public class Methods {
     // TODO: Создайте метод которому передаю имена , а он проверяет одинаковые ли они , причем не зависимо от регистра
     // fixme: что же тут не так? и посмотри название, мб можно написать словами типа first
     //        не ленись
-    public static boolean EqualityOfNames(String name1, String name2) {
-        return name1.equalsIgnoreCase(name2);
+    public static boolean equalityOfNames(String first, String second) {
+        return first.equalsIgnoreCase(second);
     }
 
 
@@ -220,10 +220,10 @@ public class Methods {
 
     // TODO: Создайте метод счетчик букв А . Подается строка и метод посчитает сколько букв А в строке
     // fixme: тест на внимательность - почему на слове testa он выдаёт 0?
-    public static int numberOfLettersA(String stroka) {
+    public static int numberOfLettersA(String letters) {
         int count = 0;
-        for (int i = 0; i < stroka.length(); i++) {
-            if (stroka.charAt(i) == 'A' || stroka.charAt(i) == 'а') {
+        for (int i = 0; i < letters.length(); i++) {
+            if (letters.charAt(i) == 'A' || letters.charAt(i) == 'а') {
                 count++;
             }
         }
@@ -235,14 +235,15 @@ public class Methods {
     // TODO: Создайте метод кошелек , у него есть начальная сумма и можно вычитать пока деньги не кончатся или сумма не будет слишком велика
     // fixme: тест на внимательность - почему идея подсвечивает слово initialAmount?
     // fixme: что же тут не так?
-    public static String Wallet(int initialАmount, int Wastes) {
-        if (Wastes > initialАmount) {
+    // Думаю , что подсвечивает , так как нету такого слова.
+    public static String wallet(int amount, int wastes) {
+        if (wastes > amount) {
             return "недостаточно средств";
-        } else if (initialАmount <= 0) {
+        } else if (amount <= 0) {
             return "сумма на кошельке = 0 или меньше";
         } else {
-            int ostatok = initialАmount - Wastes;
-            return "остаток" + ostatok;
+            int remains = amount - wastes;
+            return "остаток" + remains;
 
         }
     }
