@@ -59,7 +59,7 @@ public class Methods {
         System.out.println();
         System.out.println("age in minutes");
         System.out.println("args: 10 (int)");
-        System.out.println(AgeMinutes(10));
+        System.out.println(ageMinutes(10));
         System.out.println();
         System.out.println("Создайте метод которому передаю имена , а он проверяет одинаковые ли они , причем не зависимо от регистра");
         System.out.println("args: TesT, test");
@@ -198,7 +198,7 @@ public class Methods {
     }
 
     // fixme: что же тут не так?
-    public static int AgeMinutes(int age) {
+    public static int ageMinutes(int age) {
         return age * 365 * 24 * 60;
     }
 
@@ -223,7 +223,7 @@ public class Methods {
     public static int numberOfLettersA(String letters) {
         int count = 0;
         for (int i = 0; i < letters.length(); i++) {
-            if (letters.charAt(i) == 'A' || letters.charAt(i) == 'а') {
+            if (letters.charAt(i) == 'A' || letters.charAt(i) == 'a') {
                 count++;
             }
         }

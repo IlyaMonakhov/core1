@@ -7,10 +7,11 @@ public class OOP {
         int num2 = 1;
 
         String str = "50";
-
+    }
         // fixme: почему я не могу создать? понятно ли тебе это?
         //        классы так не пишут, это какой-то оч экстраординарный подход)
         //Parent();
+    //public class Perent{}
 
 // Реализуйте функциональность согласно описанию
 
@@ -21,7 +22,7 @@ public class OOP {
         //  4. Метод, не принимающий и не возвращающий ничего, лишь выводящий на экран "I am Parent".
         //  5. Метод, возвращающий конкатенацию (сумму двух строк), принимающий 2 строки.
 
-        class Parent {
+        static class Parent {
             public static int sumInt(int numbers1, int numbers2) {
                 return numbers1 + numbers2;
             }
@@ -54,7 +55,7 @@ public class OOP {
         //  4. Четвертый метод выводит на экран "I am Child1".
         //  5. Пятый метод после слияния двух строк должен обрезать строку и вернуть только ее половину.
 
-        class Child1 extends Parent {
+        static class Child1 extends Parent {
 
             public static int sumInt(int length, int Height) {
                 return length * Height;
@@ -89,7 +90,7 @@ public class OOP {
         //  3. Третий метод примет две строки и вернет их конкатенацию.
         //  4. Четвертый метод примет аргумент строку и выведет на экран "I am Child2" + переданная строка.
         //  5. Пятый метод принимает 3 строки и возвращает их конкатенацию.
-        class Child2 extends Parent {
+        static class Child2 extends Parent {
             public int sum(int a, int b, int с) {
                 return a + b + с;
             }
@@ -121,7 +122,7 @@ public class OOP {
         //  От него унаследуйте классы "Круг", "Прямоугольник" и "Треугольник", переопределив специфичные методы для каждой фигуры.
 
         // fixme: а как же английский?) поправь грамматическую ошибку)
-        abstract class Figure {
+        abstract static class Figure {
             // fixme: а как же английский?) поправь грамматическую ошибку)
             public abstract double calculateFigure();
 
@@ -145,11 +146,11 @@ public class OOP {
             }
 
             // fixme: а почему они абстрактные?
-            public static class rectangle extends Figure {
+            public static class Rectangle extends Figure {
                 final double length;
                 final double width;
 
-                public rectangle(double length, double width) {
+                public Rectangle(double length, double width) {
                     this.length = length;
                     this.width = width;
                 }
@@ -160,11 +161,11 @@ public class OOP {
             }
 
             // fixme: а почему они абстрактные?
-            public static class triangle extends Figure {
+            public static class Triangle extends Figure {
                 private final double base;
                 private final double height;
 
-                public triangle(double base, double height) {
+                public Triangle(double base, double height) {
                     this.base = base;
                     this.height = height;
                 }
@@ -179,7 +180,7 @@ public class OOP {
         // TODO: Создайте абстрактный класс "Сотрудник", в котором определены общие характеристики для всех сотрудников (например, имя, возраст).
         //  Создайте подклассы для различных типов сотрудников (например, "Менеджер", "Работник склада"),
         //  в которых можно описать специфичные методы и свойства.
-        abstract class Employee {
+        abstract static class Employee {
             final String name;
             final int age;
 
@@ -237,7 +238,6 @@ public class OOP {
             }
         }
     }
-}
 
 
 
